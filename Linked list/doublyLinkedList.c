@@ -7,6 +7,16 @@ struct Node {
 	struct Node* next;
 };
 
+//Delete from begining
+struct Node* DeleteAtBeg(struct Node* head) {
+	if (head == NULL) {
+		return head;
+	}
+	head = head->next;
+	head->prev = NULL;
+	return head;
+}
+//Insert At begining
 struct Node* InsertAtBeg(struct Node* head, int value) {
 	struct Node* newNode = (struct Node*) malloc (sizeof(struct Node));
 	newNode->prev = NULL;
@@ -22,11 +32,13 @@ struct Node* InsertAtBeg(struct Node* head, int value) {
 	return head;
 }
 
+//Print all elements in Doubly linked list
 void Print(struct Node* head) {
 	while ( head != NULL ) {
 		printf(" %d", head->data); 
 		head = head->next;
 	}
+	printf("\n");
 }
 
 int main() {
@@ -45,7 +57,10 @@ int main() {
 		printf("\nElements :: ");
 		scanf ("%d", &value);
 		head = InsertAtBeg(head, value);
+		
 		Print(head);
 	}
+	head = DeleteAtBeg(head);
+	Print(head);
 }
 

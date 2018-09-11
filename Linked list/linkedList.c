@@ -100,11 +100,11 @@ int main(){
 	}
 	printf("\n Reverse List ::    ");
 	ReversePrint(head);
-//	printf("\nEnter the position and value to Insert");
-//	scanf("%d%d", &pos, &value);
-//	head = InsertAt(head, pos, value);
-//	Print(head);
-//	
+	printf("\nEnter the position and value to Insert");
+	scanf("%d%d", &pos, &value);
+	head = InsertAt(head, pos, value);
+	Print(head);
+	
 //	printf("\n Enter a value to Insert at end :: ");
 //	scanf("%d", &value);
 //	head = InsertAtEnd(head, value);
